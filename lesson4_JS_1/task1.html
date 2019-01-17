@@ -1,0 +1,18 @@
+<script>
+
+function getObjfromNum(num) {
+	var obj = {};
+	if ( num < 1 || num >999 || isNaN(num)){
+		console.log( 'Ошибка. ВВедите число от 0 до 999' );
+		return obj
+	}
+	else{
+		obj['единицы'] = num % 10;
+		obj['десятки'] = (num - obj['единицы'])% 100 / 10;
+		obj['сотни'] = (num - obj['единицы'] - obj['десятки'] * 10) % 1000 / 100;
+		return obj;
+	}
+}
+	console.log(getObjfromNum(245));
+
+</script>
